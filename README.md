@@ -8,5 +8,4 @@
 - 一点点C#和Python基础！
 - 持续内卷中!!！
 
-### GitHub Stats
-![战虎的星](https://github-readme-stats.vercel.app/api?username=MinecraftEarthVillage.top&show_icons=true&theme=default)
+<iframe src="http://map.earthvillage.top" width="100%" height="500"></iframe>
