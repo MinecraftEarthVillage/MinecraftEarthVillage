@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱国幸福度指数计算系统</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        }
+
+        .中国红 {
+            color: #de2910;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .顶部横幅 {
+            background: linear-gradient(90deg, #de2910 0%, #ff6b5a 100%);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        .顶部横幅 h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .顶部横幅 p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .内容区 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            padding: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .内容区 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .面板 {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eaeaea;
+        }
+
+        .面板标题 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+            color: #333;
+        }
+
+        .面板标题.红色 {
+            color: #de2910;
+            border-bottom-color: #ffcdd2;
+        }
+
+        .面板标题.蓝色 {
+            color: #0066cc;
+            border-bottom-color: #bbdefb;
+        }
+
+        .输入组 {
+            margin-bottom: 20px;
+        }
+
+        .输入组 label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .输入控件 {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .输入控件:focus {
+            border-color: #0066cc;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+        }
+
+        .选择组 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .按钮 {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 13px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .按钮:hover {
+            background-color: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 102, 204, 0.2);
+        }
+
+        .按钮.红色 {
+            background-color: #de2910;
+        }
+
+        .按钮.红色:hover {
+            background-color: #c8240e;
+            box-shadow: 0 4px 8px rgba(222, 41, 16, 0.2);
+        }
+
+        .按钮.绿色 {
+            background-color: #2e7d32;
+        }
+
+        .按钮.绿色:hover {
+            background-color: #1b5e20;
+            box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+        }
+
+        .按钮:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .按钮组 {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .按钮组.居中 {
+            justify-content: center;
+        }
+
+        .事件表格 {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .事件表格 th {
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #555;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .事件表格 td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .事件表格 tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .事件表格 tr:last-child td {
+            border-bottom: none;
+        }
+
+        .事件类型 {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .事件类型.正面 {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .事件类型.负面 {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .操作按钮 {
+            padding: 5px 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #0066cc;
+            font-size: 14px;
+        }
+
+        .操作按钮:hover {
+            text-decoration: underline;
+        }
+
+        .操作按钮.删除 {
+            color: #de2910;
+        }
+
+        .暂无事件 {
+            text-align: center;
+            padding: 30px 0;
+            color: #999;
+            font-style: italic;
+        }
+
+        .结果面板 {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+        }
+
+        .指数显示 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .指数项 {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+
+        .指数标签 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .指数值 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .爱国指数 {
+            color: #de2910;
+        }
+
+        .反共指数 {
+            color: #0066cc;
+        }
+
+        .进度条容器 {
+            margin-top: 15px;
+            height: 12px;
+            background-color: #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .进度条 {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.8s ease-in-out;
+        }
+
+        .爱国进度 {
+            background-color: #de2910;
+        }
+
+        .反共进度 {
+            background-color: #0066cc;
+        }
+
+        .净幸福度 {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f0f7ff;
+        }
+
+        .净幸福度值 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .净幸福度.正面 {
+            color: #2e7d32;
+        }
+
+        .净幸福度.负面 {
+            color: #de2910;
+        }
+
+        .提示信息 {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .事件影响指示 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .事件影响值 {
+            font-weight: 600;
+        }
+
+        .事件影响值.正面 {
+            color: #2e7d32;
+        }
+
+        .事件影响值.负面 {
+            color: #de2910;
+        }
+
+        .底部信息 {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #eaeaea;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .红旗图标 {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #de2910;
+            margin-right: 5px;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .红旗图标:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -8px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 8px solid #de2910;
+        }
+
+        .输入后缀 {
+            position: relative;
+        }
+
+        .错误提示 {
+            color: #de2910;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="顶部横幅">
+            <h1><span class="红旗图标"></span>爱国幸福度指数计算系统</h1>
+            <p>记录生活事件，量化爱国情感与幸福体验</p>
+        </div>
+
+        <div class="内容区">
+            <div class="面板">
+                <h2 class="面板标题 红色">事件记录</h2>
+                <div class="输入组">
+                    <label for="事件名称">事件名称</label>
+                    <input type="text" id="事件名称" class="输入控件" placeholder="例如：惠民政策实施、个人发展成功等">
+                </div>
+
+                <div class="输入组">
+                    <label for="事件描述">事件描述（可选）</label>
+                    <textarea id="事件描述" class="输入控件" rows="3" placeholder="简要描述事件内容..."></textarea>
+                </div>
+
+                <div class="选择组">
+                    <div class="输入组">
+                        <label for="事件类型">事件类型</label>
+                        <select id="事件类型" class="输入控件">
+                            <option value="正面">正面事件（增加爱国指数）</option>
+                            <option value="负面">负面事件（增加反共指数）</option>
+                        </select>
+                    </div>
+
+                    <div class="输入组">
+                        <label for="影响强度">影响强度 (0-100)</label>
+                        <input type="number" id="影响强度" class="输入控件" min="0" max="100" step="1" value="10">
+                        <div class="提示信息">输入0-100的整数，数值越大，对指数影响越大</div>
+                        <div id="影响强度错误" class="错误提示">请输入0-100之间的整数</div>
+                    </div>
+                </div>
+
+                <div class="按钮组">
+                    <button id="添加事件" class="按钮 绿色">添加事件到暂存区</button>
+                    <button id="重置表单" class="按钮">重置表单</button>
+                </div>
+            </div>
+
+            <div class="面板">
+                <h2 class="面板标题 蓝色">事件暂存区</h2>
+                <div id="事件表格容器">
+                    <table class="事件表格">
+                        <thead>
+                            <tr>
+                                <th>事件名称</th>
+                                <th>类型</th>
+                                <th>影响值</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="事件列表">
+                            <!-- 事件将通过JS动态添加 -->
+                        </tbody>
+                    </table>
+                    <div id="无事件提示" class="暂无事件">暂存区暂无事件，请添加事件开始计算</div>
+                </div>
+
+                <div class="按钮组 居中">
+                    <button id="计算指数" class="按钮 红色" disabled>计算幸福度指数</button>
+                    <button id="清空事件" class="按钮" disabled>清空所有事件</button>
+                </div>
+
+                <div class="提示信息">
+                    <p>提示：爱国指数与反共指数之和恒为100%。每个事件都会同时影响两个指数，但方向相反。</p>
+                </div>
+            </div>
+
+            <div class="面板 结果面板" id="结果面板" style="display: none;">
+                <h2 class="面板标题">计算结果</h2>
+                <div class="指数显示">
+                    <div class="指数项">
+                        <div class="指数标签">
+                            爱国指数<br>
+                            <img src="左.png" alt="" srcset="">
+
+                        </div>
+                        <div class="指数值 爱国指数" id="爱国指数值">100.0%</div>
+                        <div class="进度条容器">
+                            <div class="进度条 爱国进度" id="爱国进度条" style="width: 100%"></div>
+                        </div>
+                        <div class="事件影响指示">
+                            <span>初始值: 50%</span>
+                            <span class="事件影响值 正面" id="爱国变化值">+0.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="指数项">
+                        <div class="指数标签">
+                            反共指数<br><img src="右.png" alt="" srcset="">
+                        </div>
+                        <div class="指数值 反共指数" id="反共指数值">0.0%</div>
+                        <div class="进度条容器">
+                            <div class="进度条 反共进度" id="反共进度条" style="width: 0%"></div>
+                        </div>
+                        <div class="事件影响指示">
+                            <span>初始值: 50%</span>
+                            <span class="事件影响值 负面" id="反共变化值">+0.0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="净幸福度" id="净幸福度显示">
+                    <div>净幸福度</div>
+                    <div class="净幸福度值" id="净幸福度值">+100.0%</div>
+                    <div class="提示信息">爱国指数与反共指数的差值，反映总体幸福感受</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="底部信息">
+            <p>爱国幸福度指数计算系统 © 2023 | 本算法基于爱国指数与反共指数的动态平衡原理</p>
+            <p>算法说明：爱国指数与反共指数之和恒为100%，事件影响具有相互抵消效应</p>
+        </div>
+    </div>
+
+    <script>
+        // 定义幸福度计算类
+        class 幸福度计算器 {
+            constructor() {
+                this.爱国指数 = 0.5;  // 初始50%
+                this.反共指数 = 0.5;  // 初始50%
+                this.事件记录 = [];   // 存储所有事件
+                this.初始爱国指数 = 0.5; // 记录初始值用于计算变化
+                this.初始反共指数 = 0.5; // 记录初始值用于计算变化
+            }
+
+            // 归一化处理，确保总和为1
+            归一化() {
+                const 总和 = this.爱国指数 + this.反共指数;
+                if (总和 !== 0) {
+                    this.爱国指数 /= 总和;
+                    this.反共指数 /= 总和;
+                } else {
+                    // 特殊情况处理
+                    this.爱国指数 = 0.5;
+                    this.反共指数 = 0.5;
+                }
+            }
+
+            // 应用单个事件
+            应用事件(事件影响, 事件类型) {
+                // 事件影响是0-1之间的小数
+                if (事件类型 === '正面') {
+                    // 正面事件：爱国指数增加，反共指数减少
+                    this.爱国指数 += 事件影响 * (1 - this.爱国指数) * 0.5;
+                    this.反共指数 -= 事件影响 * this.反共指数 * 0.5;
+                } else if (事件类型 === '负面') {
+                    // 负面事件：爱国指数减少，反共指数增加
+                    this.爱国指数 -= 事件影响 * this.爱国指数 * 0.5;
+                    this.反共指数 += 事件影响 * (1 - this.反共指数) * 0.5;
+                }
+
+                // 确保值在合理范围内
+                this.爱国指数 = Math.max(0, Math.min(1, this.爱国指数));
+                this.反共指数 = Math.max(0, Math.min(1, this.反共指数));
+
+                // 归一化
+                this.归一化();
+            }
+
+            // 批量应用所有事件
+            计算指数() {
+                // 重置为初始值
+                this.爱国指数 = this.初始爱国指数;
+                this.反共指数 = this.初始反共指数;
+
+                // 按顺序应用所有事件
+                for (const 事件 of this.事件记录) {
+                    this.应用事件(事件.影响强度, 事件.类型);
+                }
+
+                return this.获取百分比();
+            }
+
+            // 添加事件
+            添加事件(事件名称, 事件描述, 事件类型, 影响强度) {
+                const 新事件 = {
+                    名称: 事件名称,
+                    描述: 事件描述,
+                    类型: 事件类型,
+                    影响强度: 影响强度,  // 这里已经是0-1之间的小数
+                    时间戳: new Date().toLocaleString()
+                };
+
+                this.事件记录.push(新事件);
+                return 新事件;
+            }
+
+            // 删除事件
+            删除事件(索引) {
+                if (索引 >= 0 && 索引 < this.事件记录.length) {
+                    this.事件记录.splice(索引, 1);
+                    return true;
+                }
+                return false;
+            }
+
+            // 编辑事件
+            编辑事件(索引, 事件名称, 事件描述, 事件类型, 影响强度) {
+                if (索引 >= 0 && 索引 < this.事件记录.length) {
+                    this.事件记录[索引] = {
+                        名称: 事件名称,
+                        描述: 事件描述,
+                        类型: 事件类型,
+                        影响强度: 影响强度,  // 这里已经是0-1之间的小数
+                        时间戳: this.事件记录[索引].时间戳
+                    };
+                    return true;
+                }
+                return false;
+            }
+
+            // 清空所有事件
+            清空事件() {
+                this.事件记录 = [];
+            }
+
+            // 获取百分比形式结果
+            获取百分比() {
+                const 爱国百分比 = this.爱国指数 * 100;
+                const 反共百分比 = this.反共指数 * 100;
+                const 净幸福度 = 爱国百分比 - 反共百分比;
+
+                return {
+                    爱国指数: 爱国百分比,
+                    反共指数: 反共百分比,
+                    净幸福度: 净幸福度,
+                    爱国变化: 爱国百分比 - this.初始爱国指数 * 100,
+                    反共变化: 反共百分比 - this.初始反共指数 * 100
+                };
+            }
+        }
+
+        // 创建计算器实例
+        const 我的计算器 = new 幸福度计算器();
+
+        // DOM元素
+        const 事件名称输入 = document.getElementById('事件名称');
+        const 事件描述输入 = document.getElementById('事件描述');
+        const 事件类型选择 = document.getElementById('事件类型');
+        const 影响强度输入 = document.getElementById('影响强度');
+        const 影响强度错误提示 = document.getElementById('影响强度错误');
+        const 添加事件按钮 = document.getElementById('添加事件');
+        const 重置表单按钮 = document.getElementById('重置表单');
+        const 计算指数按钮 = document.getElementById('计算指数');
+        const 清空事件按钮 = document.getElementById('清空事件');
+        const 事件列表容器 = document.getElementById('事件列表');
+        const 无事件提示 = document.getElementById('无事件提示');
+        const 结果面板 = document.getElementById('结果面板');
+        const 爱国指数值显示 = document.getElementById('爱国指数值');
+        const 反共指数值显示 = document.getElementById('反共指数值');
+        const 爱国进度条 = document.getElementById('爱国进度条');
+        const 反共进度条 = document.getElementById('反共进度条');
+        const 爱国变化值显示 = document.getElementById('爱国变化值');
+        const 反共变化值显示 = document.getElementById('反共变化值');
+        const 净幸福度值显示 = document.getElementById('净幸福度值');
+        const 净幸福度显示 = document.getElementById('净幸福度显示');
+
+        // 当前编辑的事件索引（用于编辑功能）
+        let 当前编辑索引 = -1;
+
+        // 验证影响强度输入
+        影响强度输入.addEventListener('input', function () {
+            const 值 = parseInt(this.value);
+            if (值 < 0 || 值 > 100 || isNaN(值)) {
+                影响强度错误提示.style.display = 'block';
+                添加事件按钮.disabled = true;
+            } else {
+                影响强度错误提示.style.display = 'none';
+                添加事件按钮.disabled = false;
+            }
+        });
+
+        // 添加事件到暂存区
+        添加事件按钮.addEventListener('click', function () {
+            const 事件名称 = 事件名称输入.value.trim();
+            const 事件描述 = 事件描述输入.value.trim();
+            const 事件类型 = 事件类型选择.value;
+            const 影响强度输入值 = parseInt(影响强度输入.value);
+
+            // 验证输入
+            if (!事件名称) {
+                alert('请输入事件名称');
+                return;
+            }
+
+            if (isNaN(影响强度输入值) || 影响强度输入值 < 0 || 影响强度输入值 > 100) {
+                alert('影响强度必须在0到100之间');
+                return;
+            }
+
+            // 将0-100的整数转换为0-1的小数
+            const 影响强度 = 影响强度输入值 / 100;
+
+            if (当前编辑索引 === -1) {
+                // 添加新事件
+                我的计算器.添加事件(事件名称, 事件描述, 事件类型, 影响强度);
+            } else {
+                // 编辑现有事件
+                我的计算器.编辑事件(当前编辑索引, 事件名称, 事件描述, 事件类型, 影响强度);
+                当前编辑索引 = -1;
+                添加事件按钮.textContent = '添加事件到暂存区';
+            }
+
+            // 更新事件列表显示
+            更新事件列表();
+
+            // 启用计算和清空按钮
+            计算指数按钮.disabled = false;
+            清空事件按钮.disabled = false;
+
+            // 重置表单
+            重置表单();
+
+            // 隐藏结果面板
+            结果面板.style.display = 'none';
+        });
+
+        // 重置表单
+        重置表单按钮.addEventListener('click', 重置表单);
+
+        function 重置表单() {
+            事件名称输入.value = '';
+            事件描述输入.value = '';
+            事件类型选择.value = '正面';
+            影响强度输入.value = '10';
+            影响强度错误提示.style.display = 'none';
+            添加事件按钮.disabled = false;
+            当前编辑索引 = -1;
+            添加事件按钮.textContent = '添加事件到暂存区';
+            事件名称输入.focus();
+        }
+
+        // 更新事件列表显示
+        function 更新事件列表() {
+            const 事件记录 = 我的计算器.事件记录;
+
+            if (事件记录.length === 0) {
+                事件列表容器.innerHTML = '';
+                无事件提示.style.display = 'block';
+                return;
+            }
+
+            无事件提示.style.display = 'none';
+
+            let 表格HTML = '';
+            事件记录.forEach((事件, 索引) => {
+                // 显示时将小数乘以100转换为百分比整数
+                const 影响强度百分比 = Math.round(事件.影响强度 * 100);
+                表格HTML += `
+                <tr>
+                    <td>
+                        <strong>${事件.名称}</strong>
+                        ${事件.描述 ? `<div class="提示信息" style="margin-top:5px;">${事件.描述}</div>` : ''}
+                    </td>
+                    <td>
+                        <span class="事件类型 ${事件.类型}">${事件.类型}事件</span>
+                    </td>
+                    <td>
+                        <div class="事件影响值 ${事件.类型}">${事件.类型 === '正面' ? '+' : '-'}${影响强度百分比}%</div>
+                    </td>
+                    <td>
+                        <button class="操作按钮 编辑事件" data-index="${索引}">编辑</button>
+                        <button class="操作按钮 删除 删除事件" data-index="${索引}">删除</button>
+                    </td>
+                </tr>
+                `;
+            });
+
+            事件列表容器.innerHTML = 表格HTML;
+
+            // 添加编辑和删除事件监听器
+            document.querySelectorAll('.编辑事件').forEach(按钮 => {
+                按钮.addEventListener('click', function () {
+                    const 索引 = parseInt(this.getAttribute('data-index'));
+                    const 事件 = 我的计算器.事件记录[索引];
+
+                    // 填充表单
+                    事件名称输入.value = 事件.名称;
+                    事件描述输入.value = 事件.描述 || '';
+                    事件类型选择.value = 事件.类型;
+                    // 将小数乘以100转换为整数显示
+                    影响强度输入.value = Math.round(事件.影响强度 * 100);
+
+                    // 设置编辑状态
+                    当前编辑索引 = 索引;
+                    添加事件按钮.textContent = '更新事件';
+                    事件名称输入.focus();
+                });
+            });
+
+            document.querySelectorAll('.删除事件').forEach(按钮 => {
+                按钮.addEventListener('click', function () {
+                    const 索引 = parseInt(this.getAttribute('data-index'));
+
+                    if (confirm('确定要删除此事件吗？')) {
+                        我的计算器.删除事件(索引);
+                        更新事件列表();
+
+                        if (我的计算器.事件记录.length === 0) {
+                            计算指数按钮.disabled = true;
+                            清空事件按钮.disabled = true;
+                            结果面板.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        }
+
+        // 计算指数
+        计算指数按钮.addEventListener('click', function () {
+            const 结果 = 我的计算器.计算指数();
+
+            // 显示结果面板
+            结果面板.style.display = 'block';
+
+            // 更新显示
+            爱国指数值显示.textContent = 结果.爱国指数.toFixed(1) + '%';
+            反共指数值显示.textContent = 结果.反共指数.toFixed(1) + '%';
+
+            爱国进度条.style.width = 结果.爱国指数 + '%';
+            反共进度条.style.width = 结果.反共指数 + '%';
+
+            // 更新变化值
+            const 爱国变化 = 结果.爱国变化;
+            const 反共变化 = 结果.反共变化;
+
+            爱国变化值显示.textContent = (爱国变化 >= 0 ? '+' : '') + 爱国变化.toFixed(1) + '%';
+            爱国变化值显示.className = 爱国变化 >= 0 ? '事件影响值 正面' : '事件影响值 负面';
+
+            反共变化值显示.textContent = (反共变化 >= 0 ? '+' : '') + 反共变化.toFixed(1) + '%';
+            反共变化值显示.className = 反共变化 >= 0 ? '事件影响值 正面' : '事件影响值 负面';
+
+            // 更新净幸福度
+            净幸福度值显示.textContent = (结果.净幸福度 >= 0 ? '+' : '') + 结果.净幸福度.toFixed(1) + '%';
+
+            if (结果.净幸福度 >= 30) {
+                净幸福度值显示.style.color = '#2e7d32';
+                净幸福度显示.style.backgroundColor = '#e8f5e9';
+            } else if (结果.净幸福度 >= 0) {
+                净幸福度值显示.style.color = '#ff9800';
+                净幸福度显示.style.backgroundColor = '#fff3e0';
+            } else {
+                净幸福度值显示.style.color = '#de2910';
+                净幸福度显示.style.backgroundColor = '#ffebee';
+            }
+
+            // 滚动到结果
+            结果面板.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // 清空所有事件
+        清空事件按钮.addEventListener('click', function () {
+            if (我的计算器.事件记录.length === 0) return;
+
+            if (confirm('确定要清空所有事件吗？此操作不可撤销。')) {
+                我的计算器.清空事件();
+                更新事件列表();
+                计算指数按钮.disabled = true;
+                清空事件按钮.disabled = true;
+                结果面板.style.display = 'none';
+            }
+        });
+
+        // 初始化
+        重置表单();
+        更新事件列表();
+
+        // 添加示例数据
+        function 添加示例数据() {
+            const 示例事件 = [
+                { 名称: "国家重大科技突破", 描述: "国家在关键技术领域取得重大突破", 类型: "正面", 影响: 15 }, // 15表示15%
+                { 名称: "惠民政策实施", 描述: "政府出台惠民政策，改善民生", 类型: "正面", 影响: 10 },
+                { 名称: "个人事业发展", 描述: "个人职业发展顺利，获得晋升", 类型: "正面", 影响: 5 },
+                { 名称: "社区环境改善", 描述: "居住社区环境得到明显改善", 类型: "正面", 影响: 3 },
+                { 名称: "经济下行压力", 描述: "经济面临下行压力，影响收入", 类型: "负面", 影响: 12 },
+                { 名称: "社会不公现象", 描述: "遇到社会不公现象，影响公平感", 类型: "负面", 影响: 8 }
+            ];
+
+            示例事件.forEach(事件 => {
+                // 注意：这里传入的影响值需要转换为小数
+                我的计算器.添加事件(事件.名称, 事件.描述, 事件.类型, 事件.影响 / 100);
+            });
+
+            更新事件列表();
+            计算指数按钮.disabled = false;
+            清空事件按钮.disabled = false;
+        }
+
+        // 页面加载后自动添加示例数据（方便演示）
+        window.addEventListener('load', function () {
+            setTimeout(添加示例数据, 50);
+        });
+    </script>
+</body>
+
+</html>
