@@ -425,6 +425,7 @@
                 <div class="按钮组">
                     <button id="添加事件" class="按钮 绿色">添加事件到暂存区</button>
                     <button id="重置表单" class="按钮">重置表单</button>
+                    <button id="加载示例数据" class="按钮">添加示例数据</button>
                 </div>
             </div>
 
@@ -634,6 +635,7 @@
         const 影响强度错误提示 = document.getElementById('影响强度错误');
         const 添加事件按钮 = document.getElementById('添加事件');
         const 重置表单按钮 = document.getElementById('重置表单');
+        const 加载示例数据按钮 = document.getElementById('加载示例数据');
         const 计算指数按钮 = document.getElementById('计算指数');
         const 清空事件按钮 = document.getElementById('清空事件');
         const 事件列表容器 = document.getElementById('事件列表');
@@ -715,13 +717,15 @@
             事件名称输入.value = '';
             事件描述输入.value = '';
             事件类型选择.value = '正面';
-            影响强度输入.value = '10';
+            影响强度输入.value = '';
             影响强度错误提示.style.display = 'none';
             添加事件按钮.disabled = false;
             当前编辑索引 = -1;
             添加事件按钮.textContent = '添加事件到暂存区';
             事件名称输入.focus();
         }
+
+        加载示例数据按钮.addEventListener('click', 添加示例数据);
 
         // 更新事件列表显示
         function 更新事件列表() {
@@ -880,9 +884,9 @@
         }
 
         // 页面加载后自动添加示例数据（方便演示）
-        window.addEventListener('load', function () {
-            setTimeout(添加示例数据, 50);
-        });
+        // window.addEventListener('load', function () {
+        //     setTimeout(添加示例数据, 50);
+        // });
     </script>
 </body>
 
