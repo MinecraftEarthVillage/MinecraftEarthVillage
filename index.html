@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>爱国幸福度指数计算系统</title>
+    <title>左翼幸福度指数计算系统</title>
     <style>
         * {
             box-sizing: border-box;
@@ -57,6 +57,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 25px;
             padding: 30px;
+              overflow: auto; /* 防止超出屏幕时溢出 */
         }
 
         @media (max-width: 900px) {
@@ -277,11 +278,11 @@
             font-weight: 700;
         }
 
-        .爱国指数 {
+        .左翼指数 {
             color: #de2910;
         }
 
-        .反共指数 {
+        .右翼指数 {
             color: #0066cc;
         }
 
@@ -299,15 +300,15 @@
             transition: width 0.8s ease-in-out;
         }
 
-        .爱国进度 {
+        .左翼进度 {
             background-color: #de2910;
         }
 
-        .反共进度 {
+        .右翼进度 {
             background-color: #0066cc;
         }
 
-        .净幸福度 {
+        .倾向度 {
             text-align: center;
             margin-top: 30px;
             padding: 20px;
@@ -315,17 +316,17 @@
             background-color: #f0f7ff;
         }
 
-        .净幸福度值 {
+        .倾向度值 {
             font-size: 48px;
             font-weight: 700;
             margin-top: 10px;
         }
 
-        .净幸福度.正面 {
+        .倾向度.正面 {
             color: #2e7d32;
         }
 
-        .净幸福度.负面 {
+        .倾向度.负面 {
             color: #de2910;
         }
 
@@ -386,10 +387,10 @@
     <div class="container">
         <div class="顶部横幅">
             <h1><img class="红旗图标" src="https://www.cnis.ac.cn/zt/sjbzr/sjbzrhd/202410/W020241012346021638477.jpg"
-                    style="height: 1em;" />爱国幸福度指数计算系统<img class="红旗图标"
+                    style="height: 1em;" />左右翼倾向度指数计算系统<img class="红旗图标"
                     src="https://cdn.pixabay.com/photo/2012/04/12/23/52/flag-31015_640.png"
                     style="height: 1em;" /></h1>
-            <p>记录生活事件，量化爱国情感与幸福体验</p>
+            <p>记录生活事件，量化左右翼倾向与幸福体验</p>
         </div>
 
         <div class="内容区">
@@ -409,8 +410,8 @@
                     <div class="输入组">
                         <label for="事件类型">事件类型</label>
                         <select id="事件类型" class="输入控件">
-                            <option value="正面">正面事件（增加爱国指数）</option>
-                            <option value="负面">负面事件（增加反共指数）</option>
+                            <option value="正面">正面事件（增加左翼指数）</option>
+                            <option value="负面">负面事件（增加右翼指数）</option>
                         </select>
                     </div>
 
@@ -454,7 +455,7 @@
                 </div>
 
                 <div class="提示信息">
-                    <p>提示：爱国指数与反共指数之和恒为100%。每个事件都会同时影响两个指数，但方向相反。</p>
+                    <p>提示：左翼指数与右翼指数之和恒为100%。每个事件都会同时影响两个指数，但方向相反。</p>
                 </div>
             </div>
 
@@ -463,46 +464,46 @@
                 <div class="指数显示">
                     <div class="指数项">
                         <div class="指数标签">
-                            爱国指数<br>
+                            左翼指数<br>
                             <img src="左.png" alt="" srcset="">
 
                         </div>
-                        <div class="指数值 爱国指数" id="爱国指数值">100.0%</div>
+                        <div class="指数值 左翼指数" id="左翼指数值">100.0%</div>
                         <div class="进度条容器">
-                            <div class="进度条 爱国进度" id="爱国进度条" style="width: 100%"></div>
+                            <div class="进度条 左翼进度" id="左翼进度条" style="width: 100%"></div>
                         </div>
                         <div class="事件影响指示">
                             <span>初始值: 50%</span>
-                            <span class="事件影响值 正面" id="爱国变化值">+0.0%</span>
+                            <span class="事件影响值 正面" id="左翼变化值">+0.0%</span>
                         </div>
                     </div>
 
                     <div class="指数项">
                         <div class="指数标签">
-                            反共指数<br><img src="右.png" alt="" srcset="">
+                            右翼指数<br><img src="右.png" alt="" srcset="">
                         </div>
-                        <div class="指数值 反共指数" id="反共指数值">0.0%</div>
+                        <div class="指数值 右翼指数" id="右翼指数值">0.0%</div>
                         <div class="进度条容器">
-                            <div class="进度条 反共进度" id="反共进度条" style="width: 0%"></div>
+                            <div class="进度条 右翼进度" id="右翼进度条" style="width: 0%"></div>
                         </div>
                         <div class="事件影响指示">
                             <span>初始值: 50%</span>
-                            <span class="事件影响值 负面" id="反共变化值">+0.0%</span>
+                            <span class="事件影响值 负面" id="右翼变化值">+0.0%</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="净幸福度" id="净幸福度显示">
-                    <div>净幸福度</div>
-                    <div class="净幸福度值" id="净幸福度值">+100.0%</div>
-                    <div class="提示信息">爱国指数与反共指数的差值，反映总体幸福感受</div>
+                <div class="倾向度" id="倾向度显示">
+                    <div id="倾向等级">倾向度</div>
+                    <div class="倾向度值" id="倾向度值">+100.0%</div>
+                    <div class="提示信息">左翼指数与右翼指数的差值，反映总体幸福感受</div>
                 </div>
             </div>
         </div>
 
         <div class="底部信息">
-            <p>爱国幸福度指数计算系统 © 2023 | 本算法基于爱国指数与反共指数的动态平衡原理</p>
-            <p>算法说明：爱国指数与反共指数之和恒为100%，事件影响具有相互抵消效应</p>
+            <p>左翼幸福度指数计算系统 © 2023 | 本算法基于左翼指数与右翼指数的动态平衡原理</p>
+            <p>算法说明：左翼指数与右翼指数之和恒为100%，事件影响具有相互抵消效应</p>
         </div>
     </div>
 
@@ -510,23 +511,23 @@
         // 定义幸福度计算类
         class 幸福度计算器 {
             constructor() {
-                this.爱国指数 = 0.5;  // 初始50%
-                this.反共指数 = 0.5;  // 初始50%
+                this.左翼指数 = 0.5;  // 初始50%
+                this.右翼指数 = 0.5;  // 初始50%
                 this.事件记录 = [];   // 存储所有事件
-                this.初始爱国指数 = 0.5; // 记录初始值用于计算变化
-                this.初始反共指数 = 0.5; // 记录初始值用于计算变化
+                this.初始左翼指数 = 0.5; // 记录初始值用于计算变化
+                this.初始右翼指数 = 0.5; // 记录初始值用于计算变化
             }
 
             // 归一化处理，确保总和为1
             归一化() {
-                const 总和 = this.爱国指数 + this.反共指数;
+                const 总和 = this.左翼指数 + this.右翼指数;
                 if (总和 !== 0) {
-                    this.爱国指数 /= 总和;
-                    this.反共指数 /= 总和;
+                    this.左翼指数 /= 总和;
+                    this.右翼指数 /= 总和;
                 } else {
                     // 特殊情况处理
-                    this.爱国指数 = 0.5;
-                    this.反共指数 = 0.5;
+                    this.左翼指数 = 0.5;
+                    this.右翼指数 = 0.5;
                 }
             }
 
@@ -534,18 +535,18 @@
             应用事件(事件影响, 事件类型) {
                 // 事件影响是0-1之间的小数
                 if (事件类型 === '正面') {
-                    // 正面事件：爱国指数增加，反共指数减少
-                    this.爱国指数 += 事件影响 * (1 - this.爱国指数) * 0.5;
-                    this.反共指数 -= 事件影响 * this.反共指数 * 0.5;
+                    // 正面事件：左翼指数增加，右翼指数减少
+                    this.左翼指数 += 事件影响 * (1 - this.左翼指数) * 0.5;
+                    this.右翼指数 -= 事件影响 * this.右翼指数 * 0.5;
                 } else if (事件类型 === '负面') {
-                    // 负面事件：爱国指数减少，反共指数增加
-                    this.爱国指数 -= 事件影响 * this.爱国指数 * 0.5;
-                    this.反共指数 += 事件影响 * (1 - this.反共指数) * 0.5;
+                    // 负面事件：左翼指数减少，右翼指数增加
+                    this.左翼指数 -= 事件影响 * this.左翼指数 * 0.5;
+                    this.右翼指数 += 事件影响 * (1 - this.右翼指数) * 0.5;
                 }
 
                 // 确保值在合理范围内
-                this.爱国指数 = Math.max(0, Math.min(1, this.爱国指数));
-                this.反共指数 = Math.max(0, Math.min(1, this.反共指数));
+                this.左翼指数 = Math.max(0, Math.min(1, this.左翼指数));
+                this.右翼指数 = Math.max(0, Math.min(1, this.右翼指数));
 
                 // 归一化
                 this.归一化();
@@ -554,8 +555,8 @@
             // 批量应用所有事件
             计算指数() {
                 // 重置为初始值
-                this.爱国指数 = this.初始爱国指数;
-                this.反共指数 = this.初始反共指数;
+                this.左翼指数 = this.初始左翼指数;
+                this.右翼指数 = this.初始右翼指数;
 
                 // 按顺序应用所有事件
                 for (const 事件 of this.事件记录) {
@@ -610,16 +611,16 @@
 
             // 获取百分比形式结果
             获取百分比() {
-                const 爱国百分比 = this.爱国指数 * 100;
-                const 反共百分比 = this.反共指数 * 100;
-                const 净幸福度 = 爱国百分比 - 反共百分比;
+                const 左翼百分比 = this.左翼指数 * 100;
+                const 右翼百分比 = this.右翼指数 * 100;
+                const 倾向度 = 左翼百分比 - 右翼百分比;
 
                 return {
-                    爱国指数: 爱国百分比,
-                    反共指数: 反共百分比,
-                    净幸福度: 净幸福度,
-                    爱国变化: 爱国百分比 - this.初始爱国指数 * 100,
-                    反共变化: 反共百分比 - this.初始反共指数 * 100
+                    左翼指数: 左翼百分比,
+                    右翼指数: 右翼百分比,
+                    倾向度: 倾向度,
+                    左翼变化: 左翼百分比 - this.初始左翼指数 * 100,
+                    右翼变化: 右翼百分比 - this.初始右翼指数 * 100
                 };
             }
         }
@@ -641,14 +642,14 @@
         const 事件列表容器 = document.getElementById('事件列表');
         const 无事件提示 = document.getElementById('无事件提示');
         const 结果面板 = document.getElementById('结果面板');
-        const 爱国指数值显示 = document.getElementById('爱国指数值');
-        const 反共指数值显示 = document.getElementById('反共指数值');
-        const 爱国进度条 = document.getElementById('爱国进度条');
-        const 反共进度条 = document.getElementById('反共进度条');
-        const 爱国变化值显示 = document.getElementById('爱国变化值');
-        const 反共变化值显示 = document.getElementById('反共变化值');
-        const 净幸福度值显示 = document.getElementById('净幸福度值');
-        const 净幸福度显示 = document.getElementById('净幸福度显示');
+        const 左翼指数值显示 = document.getElementById('左翼指数值');
+        const 右翼指数值显示 = document.getElementById('右翼指数值');
+        const 左翼进度条 = document.getElementById('左翼进度条');
+        const 右翼进度条 = document.getElementById('右翼进度条');
+        const 左翼变化值显示 = document.getElementById('左翼变化值');
+        const 右翼变化值显示 = document.getElementById('右翼变化值');
+        const 倾向度值显示 = document.getElementById('倾向度值');
+        const 倾向度显示 = document.getElementById('倾向度显示');
 
         // 当前编辑的事件索引（用于编辑功能）
         let 当前编辑索引 = -1;
@@ -806,39 +807,53 @@
         // 计算指数
         计算指数按钮.addEventListener('click', function () {
             const 结果 = 我的计算器.计算指数();
+            倾向等级=""
 
             // 显示结果面板
             结果面板.style.display = 'block';
 
             // 更新显示
-            爱国指数值显示.textContent = 结果.爱国指数.toFixed(1) + '%';
-            反共指数值显示.textContent = 结果.反共指数.toFixed(1) + '%';
+            左翼指数值显示.textContent = 结果.左翼指数.toFixed(1) + '%';
+            右翼指数值显示.textContent = 结果.右翼指数.toFixed(1) + '%';
 
-            爱国进度条.style.width = 结果.爱国指数 + '%';
-            反共进度条.style.width = 结果.反共指数 + '%';
+            左翼进度条.style.width = 结果.左翼指数 + '%';
+            右翼进度条.style.width = 结果.右翼指数 + '%';
 
             // 更新变化值
-            const 爱国变化 = 结果.爱国变化;
-            const 反共变化 = 结果.反共变化;
+            const 左翼变化 = 结果.左翼变化;
+            const 右翼变化 = 结果.右翼变化;
 
-            爱国变化值显示.textContent = (爱国变化 >= 0 ? '+' : '') + 爱国变化.toFixed(1) + '%';
-            爱国变化值显示.className = 爱国变化 >= 0 ? '事件影响值 正面' : '事件影响值 负面';
+            左翼变化值显示.textContent = (左翼变化 >= 0 ? '+' : '') + 左翼变化.toFixed(1) + '%';
+            左翼变化值显示.className = 左翼变化 >= 0 ? '事件影响值 正面' : '事件影响值 负面';
 
-            反共变化值显示.textContent = (反共变化 >= 0 ? '+' : '') + 反共变化.toFixed(1) + '%';
-            反共变化值显示.className = 反共变化 >= 0 ? '事件影响值 正面' : '事件影响值 负面';
+            右翼变化值显示.textContent = (右翼变化 >= 0 ? '+' : '') + 右翼变化.toFixed(1) + '%';
+            右翼变化值显示.className = 右翼变化 >= 0 ? '事件影响值 正面' : '事件影响值 负面';
 
-            // 更新净幸福度
-            净幸福度值显示.textContent = (结果.净幸福度 >= 0 ? '+' : '') + 结果.净幸福度.toFixed(1) + '%';
+            // 更新倾向度
+            倾向度值显示.textContent = (结果.倾向度 >= 0 ? '+' : '') + 结果.倾向度.toFixed(1) + '%';
 
-            if (结果.净幸福度 >= 30) {
-                净幸福度值显示.style.color = '#2e7d32';
-                净幸福度显示.style.backgroundColor = '#e8f5e9';
-            } else if (结果.净幸福度 >= 0) {
-                净幸福度值显示.style.color = '#ff9800';
-                净幸福度显示.style.backgroundColor = '#fff3e0';
-            } else {
-                净幸福度值显示.style.color = '#de2910';
-                净幸福度显示.style.backgroundColor = '#ffebee';
+            if (结果.倾向度 >= 30) {
+                倾向度值显示.style.color = '#2e7d32';
+                document.getElementById('倾向等级').textContent = '☭☭☭高爱国倾向☭☭☭';
+            }else if (结果.倾向度 >= 15 && 结果.倾向度 < 30) {
+                倾向度值显示.style.color = '#81c784';
+                document.getElementById('倾向等级').textContent = '☭☭中等爱国倾向☭☭';
+            } else if (结果.倾向度 > 0) {
+                倾向度值显示.style.color = '#4caf50';
+                document.getElementById('倾向等级').textContent = '☭轻微爱国倾向☭';
+            } else if (结果.倾向度 === 0) {
+                倾向度值显示.style.color = '#000000';
+                document.getElementById('倾向等级').textContent = '中立';
+            } else if (结果.倾向度 <=0 && 结果.倾向度 > -15) {
+                倾向度值显示.style.color = '#ff9800';
+                document.getElementById('倾向等级').textContent = '⚠轻微反共倾向⚠';
+            }else if (结果.倾向度 <= -15 && 结果.倾向度 > -30) {
+                倾向度值显示.style.color = '#ff5722';
+                document.getElementById('倾向等级').textContent = '⚠⚠中等反共倾向⚠⚠';
+            }
+            else if (结果.倾向度 <= -30) {
+                倾向度值显示.style.color = '#de2910';
+                document.getElementById('倾向等级').textContent = '⚠⚠⚠高反共倾向⚠⚠⚠';
             }
 
             // 滚动到结果
