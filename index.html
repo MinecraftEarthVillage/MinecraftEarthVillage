@@ -496,7 +496,7 @@
                 <div class="倾向度" id="倾向度显示">
                     <div id="倾向等级">倾向度</div>
                     <div class="倾向度值" id="倾向度值">+100.0%</div>
-                    <div class="提示信息">左翼指数与右翼指数的差值，反映总体幸福感受</div>
+                    <div class="提示信息">左翼指数与右翼指数的差值，反映总体政治倾向</div>
                 </div>
             </div>
         </div>
@@ -838,13 +838,13 @@
             }else if (结果.倾向度 >= 15 && 结果.倾向度 < 30) {
                 倾向度值显示.style.color = '#81c784';
                 document.getElementById('倾向等级').textContent = '☭☭中等爱国倾向☭☭';
-            } else if (结果.倾向度 > 0) {
+            } else if (结果.倾向度 > 2 && 结果.倾向度 < 15) {
                 倾向度值显示.style.color = '#4caf50';
                 document.getElementById('倾向等级').textContent = '☭轻微爱国倾向☭';
-            } else if (结果.倾向度 === 0) {
+            } else if (结果.倾向度 <= 2 && 结果.倾向度 > -2) {
                 倾向度值显示.style.color = '#000000';
-                document.getElementById('倾向等级').textContent = '中立';
-            } else if (结果.倾向度 <=0 && 结果.倾向度 > -15) {
+                document.getElementById('倾向等级').textContent = '基本平衡';
+            } else if (结果.倾向度 <=-2 && 结果.倾向度 > -15) {
                 倾向度值显示.style.color = '#ff9800';
                 document.getElementById('倾向等级').textContent = '⚠轻微反共倾向⚠';
             }else if (结果.倾向度 <= -15 && 结果.倾向度 > -30) {
