@@ -1,3 +1,4 @@
+:老虎的img2: https://raw.githubusercontent.com/MinecraftEarthVillage/img2/refs/heads/main/
 # 光复北粤，时代革命
 
 总有一天，被压迫的华南虎们会卸下身上的马具
@@ -6,7 +7,8 @@
 
 建立独立自主的 **大广东民主主义人民共和国**
 
-![](North_Guangdong_Map.png)
+image::{老虎的img2}/North_Guangdong_Map.png[height=600]
+image::{老虎的img2}/Guangdong_Map.png[height=600]
 
 >本人被内地全平台联合恶意封禁事后投诉置之不理致损失￥1000+，~~道心已破，转投向广东民主化运动~~
 
