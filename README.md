@@ -7,8 +7,8 @@
 
 建立独立自主的 **大广东民主主义人民共和国**
 
-image::{老虎的img2}/North_Guangdong_Map.png[height=600]
-image::{老虎的img2}/Guangdong_Map.png[height=600]
+[](North_Guangdong_Map.png)
+[](Guangdong_Map.png)
 
 >本人被内地全平台联合恶意封禁事后投诉置之不理致损失￥1000+，~~道心已破，转投向广东民主化运动~~
 
