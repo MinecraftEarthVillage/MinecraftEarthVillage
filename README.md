@@ -8,9 +8,18 @@
 消灭假共党，建立独立自主的 **大广东民主主义人民共和国**
 
 ![](North_Guangdong_Map.png)
-![](Guangdong_Map.png)
+>West Guangdong (北粤), Also known as Guangdong Mainland (广东大陆), also known as the People's Republic of China（PRC）. Do not confuse with [Northern Guangdong](https://en.wikipedia.org/wiki/Northern_Guangdong), which refers to a region in the northern part of region of [Guangdong](https://en.wikipedia.org/w/index.php?title=Guangdong_Independence_Movement). 
 
->本人被内地全平台联合恶意封禁事后投诉置之不理致损失￥1000+，~~道心已破，转投向广东民主化运动~~
+
+![](Guangdong_Map.png)
+>Great Guangdong/Cantonia map
+
+![](flag.png)
+>Democratic People's Republic of Cantonia（DPRC）
+>
+>South China Tiger Revival Party（SCTRP）
+
+
 
 # **一、为什么广东要独立？**
 
@@ -72,6 +81,8 @@
 # 当前状态
 
 **⚠高反共指数⚠**
+
+>本人被内地全平台联合恶意封禁事后投诉置之不理致损失￥1000+
 
 ![](状态.png)
 
