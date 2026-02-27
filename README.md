@@ -8,7 +8,7 @@
 消灭假共党，建立独立自主的 **大广东民主主义人民共和国**
 
 ![](North_Guangdong_Map.png)
->North Guangdong (北粤), Also known as Guangdong Mainland (广东大陆), also known as the People's Republic of China（PRC）. Do not confuse with [Northern Guangdong](https://en.wikipedia.org/wiki/Northern_Guangdong), which refers to a region in the northern part of region of [Guangdong](https://en.wikipedia.org/w/index.php?title=Guangdong_Independence_Movement). 
+>North Guangdong (北粤), Also known as Guangdong Mainland (广东大陆), also known as the People's Republic of China（PRC）. Do not confuse with [The northern part of Guangdong](https://en.wikipedia.org/wiki/Northern_Guangdong), which refers to a region in the northern part of region of [Guangdong](https://en.wikipedia.org/w/index.php?title=Guangdong_Independence_Movement). 
 
 
 ![](Guangdong_Map.png)
