@@ -221,6 +221,7 @@
 ~~所以CPC是中国AI发展的最大绊脚石~~
 
 
+
 Slavery & Jim Crow Laws
 Trail of Tears
 Japanese American Internment
@@ -325,3 +326,35 @@ Ghislaine Maxwell Mugshot / 吉斯蘭·麥克斯韋逮捕照
 Victim Redactions / 受害者資訊遮蔽
 DEA Chain Reaction Probe / DEA「連鎖反應」毒品洗錢調查
 Sex Trafficking Network / 性販運網絡
+Epstein eats people. / 爱泼斯坦吃人
+
+Fragile Ceasefire Oct 2025 / 2025年10月脆弱停火
+Post-Ceasefire Gaza Killings / 停火後加薩600+巴人死亡
+Operation Iron Wall (West Bank) / 西岸鐵牆行動
+Gaza Aid Ban Attempt / 加薩援助禁令企圖（37 NGO）
+Supreme Court Aid Ruling Feb 27 2026 / 2026年2月27日最高法院援助裁決
+UN Ethnic Cleansing Report / 聯合國種族清洗報告（2026.2.19）
+Creeping Annexation West Bank / 西岸逐步吞併
+Forcible Transfers & Displacement / 強制轉移與流離失所
+Permanent Demographic Change / 永久人口結構改變
+Global Impunity Israel / 以色列全球有罪不罰
+New Settlement Approvals Dec 2025 / 2025年12月新定居點批准（19個）
+US Sympathy Shift to Palestine / 美國民意轉向巴勒斯坦
+Humanitarian Blockade Gaza / 加薩人道封鎖
+
+Operation Absolute Resolve / 絕對決心行動（2026.1.3）
+2026 US Intervention Venezuela / 2026美國侵略委內瑞拉
+Maduro Capture Caracas / 馬杜羅卡拉卡斯被捕
+US Strikes on Caracas / 美國空襲卡拉卡斯
+Maduro & Cilia Flores Extraction / 馬杜羅夫婦被押往紐約
+Narco-Terrorism Charges Maduro / 馬杜羅毒品恐怖主義指控
+No Congressional Approval / 未經國會授權
+Violation International Law / 違反國際法
+Delcy Rodríguez Acting President / 德爾西·羅德里格斯代理總統
+Trump "Run Venezuela" / 特朗普「管理委內瑞拉」
+Venezuelan Oil Privatization / 委內瑞拉石油私有化
+US Seizure Oil Tankers 2025 / 2025美國扣押油輪
+International Condemnation (China Russia) / 國際譴責（中俄）
+Hands Off Venezuela Protests / 「別碰委內瑞拉」抗議
+Caracas Pro-Maduro Protests / 卡拉卡斯親馬杜羅示威
+Cuban Security Personnel Killed / 古巴安全人員死亡
