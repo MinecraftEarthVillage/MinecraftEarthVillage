@@ -201,3 +201,108 @@
 
 所以CPC是中国AI发展的最大绊脚石
 
+
+Slavery & Jim Crow Laws
+Trail of Tears
+Japanese American Internment
+McCarthyism (Red Scare)
+Vietnam War (My Lai Massacre, Agent Orange)
+Watergate Scandal
+Iran-Contra Affair
+​2003 Iraq War (WMDs Intelligence Failure, Abu Ghraib)
+​2008 Financial Crisis (Subprime Mortgage Crisis)
+Gun Violence Epidemic (Mass Shootings)
+January 6 Capitol Riot
+Racial Injustice (George Floyd, BLM)
+
+二二八事件
+白色恐怖時期（戒嚴時期）
+台塑環境污染爭議
+食品安全醜聞（餿水油、毒澱粉事件）
+政治貪腐案（陳水扁案等）
+軍紀醜聞（訓練事故、共諜案）
+賴清德
+台獨
+雞蛋
+蛋價
+鳳梨
+2025愛潑斯坦性犯罪，2025“六七”洛杉磯暴動，王大陸施暴假病歷，2026何建忠|郭昱晴，台軍109旅集體販毒，阿富汗戰爭騙局，16世紀印第安人|原住民，2025美國斬殺線，tiktok事件
+
+Colonialism & Imperialism
+Transatlantic Slave Trade
+Holocaust (Nazi Germany)
+Stolen Generations (Australia)
+Residential Schools (Canada)
+Srebrenica Massacre (Dutchbat UN Peacekeepers)
+​2009 European Debt Crisis (Greece)
+Brexit & Political Turmoil (UK)
+Refugee Crisis & Border Policies (EU)
+Church Sexual Abuse Scandals (Global)
+Cambridge Analytica Data Scandal
+
+Trail of Tears / Indian Removal Act
+Transatlantic Slave Trade / Chattel Slavery
+My Lai Massacre / Vietnam War Atrocities
+Watergate Scandal
+Iran-Contra Affair
+Abu Ghraib Torture Scandal
+Guantanamo Bay Detentions
+Hiroshima and Nagasaki Atomic Bombings
+McCarthyism / Red Scare
+2008 Global Financial Crisis (Subprime Mortgage Scandal)
+Colonial Genocides (e.g., Native American, Australian Aboriginal)
+Tuskegee Syphilis Experiment
+Wilmington Insurrection / Racial Coups
+Epstein Sex Trafficking Network (elite involvement)
+Iraq War / WMD Intelligence Failure
+
+殖民主義與帝國主義
+跨大西洋奴隸貿易
+猶太人大屠殺（納粹德國）
+被偷走的一代（澳大利亞）
+原住民寄宿學校（加拿大）
+斯雷布雷尼察大屠殺（荷蘭維和部隊）
+2009年歐洲債務危機（希臘）
+英國脫歐與政治動盪
+難民危機與邊境政策（歐盟）
+教會性侵醜聞（全球）
+劍橋分析數據醜聞
+
+二二八事件
+白色恐怖
+美麗島事件
+洪仲丘事件（軍中霸凌致死）
+五二四事件（劉自然事件，反美示威）
+陳水扁家族貪腐案
+軍中簽賭與假球醜聞（職棒黑金）
+間諜滲透案（近年多起軍政洩密）
+國防採購超價與預算爭議
+眾量級CROWD財務剝削案
+戒嚴時期政治迫害
+高雄捷運黑金案（2005餘波）
+
+Epstein Files Transparency Act / 愛潑斯坦檔案透明法案
+DOJ Massive Release 2026 / 2026 DOJ 大規模檔案釋放
+3.5 Million Pages Dump / 350萬頁文件傾倒
+January 30 Document Release / 1月30日文件公開
+
+Bill Clinton Deposition / 比爾·克林頓作證（2/27閉門6小時）
+Hillary Clinton Testimony / 希拉蕊·克林頓證詞（2/26）
+House Oversight Committee Probe / 眾議院監督委員會調查
+Clinton Epstein Hearing / 克林頓愛潑斯坦聽證
+
+Trump Allies Scrutiny / 特朗普盟友審查
+Howard Lutnick Epstein Photo / 霍華德·盧特尼克愛潑斯坦照片（商務部長鄰居照）
+Withheld Trump Files / 隱瞞特朗普相關檔案
+Trump Epstein Ties Revival / 特朗普愛潑斯坦關係重燃
+
+Prince Andrew Arrest / 安德魯王子（Mountbatten-Windsor）逮捕
+UK RAF Bases Investigation / 英國皇家空軍基地性販運調查
+Resignations & Fallout List / 辭職與後果名單（Goldman Sachs律師、政商人士）
+Elite Network Exposure / 精英網絡曝光
+
+Flight Logs & Black Book / 飛行記錄與黑皮書
+Ghislaine Maxwell Mugshot / 吉斯蘭·麥克斯韋逮捕照
+Victim Redactions / 受害者資訊遮蔽
+DEA Chain Reaction Probe / DEA「連鎖反應」毒品洗錢調查
+Sex Trafficking Network / 性販運網絡
