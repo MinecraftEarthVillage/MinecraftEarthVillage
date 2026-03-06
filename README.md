@@ -5,23 +5,23 @@
 
 *总有一天，被压迫的华南虎们会卸下身上的马具*
 
-消灭假共党，建立独立自主的 **大广东民主主义人民共和国**
+消灭民进党，建立完全统一的 **粤港澳台大湾区**
 
-![](North_Guangdong_Map.png)
->North Guangdong (北粤), Also known as Guangdong Mainland (广东大陆), also known as the People's Republic of China（PRC）. Do not confuse with [The northern part of Guangdong](https://en.wikipedia.org/wiki/Northern_Guangdong), which refers to a region in the northern part of region of [Guangdong](https://en.wikipedia.org/w/index.php?title=Guangdong_Independence_Movement). 
+<!-- ![](North_Guangdong_Map.png) -->
+<!-- >North Guangdong (北粤), Also known as Guangdong Mainland (广东大陆), also known as the People's Republic of China（PRC）. Do not confuse with [The northern part of Guangdong](https://en.wikipedia.org/wiki/Northern_Guangdong), which refers to a region in the northern part of region of [Guangdong](https://en.wikipedia.org/w/index.php?title=Guangdong_Independence_Movement).  -->
 
 
 ![](Guangdong_Map.png)
 >Great Guangdong/Cantonia map
 
-![](flag.png)
->Democratic People's Republic of Cantonia（DPRC）
+![](粤港澳大湾区.png)
+>Guangdong-Hong Kong-Macao-Taiwan Greater Bay Area
 >
->South China Tiger Revival Party（SCTRP）
+<!-- >South China Tiger Revival Party（SCTRP） -->
 
 
 
-# **一、为什么广东要独立？**
+<!-- # **一、为什么广东要独立？**
 
 1. 广东是中国目前最富裕、最具活力的省份，却长期被中共当作“奶牛”殖民掠夺。我们的巨额财政收入被强制调拨，用于给西藏、新疆等外省修建铁路、搞基建，而北粤地区的基础设施却严重滞后——例如韶关与紧邻的河源之间至今没有直达列车，必须绕道广州。这种剥削让广东人用血汗钱养活全国，却换不来应有的回报。
 
@@ -67,7 +67,7 @@
 >团结起来到明天,
 >没有邪党的新广东
 >就一定要实现!
-
+ -->
 
 ---
 
@@ -80,23 +80,24 @@
 
 # 当前状态
 
-**⚠高反共指数⚠**
-
->本人被内地全平台联合恶意封禁事后投诉置之不理致损失￥1000+
+**✅轻微爱国倾向✅**
 
 ![](状态.png)
 
-## 基础爱国指数加成（65%）
+## 基础爱国指数加成（165%）
 
 - 位于本国领土城市&乡土情怀：爱国指数+5%/h（长期）
 - 不定期的接收到网路上的任何爱国主义内容<sub>如历史影片</sub>：+15%（长期）
 - 使用了国家政策福利：+5%（长期）
 - 国家重大科技突破/综合实力增长：+20%
 - 看了九三阅兵：+20%
+- 神秘力量的帮助与安慰：+100%
 
+---
 
+>本人被内地全平台联合恶意封禁事后投诉置之不理致损失￥1000+
 
-## 2024：指示腾讯平台将QQ永久封禁（反共指数+20%）（长期）
+## 2024：指示腾讯平台将QQ永久封禁（反共指数+10%）（被削弱）
 
 客服拒绝提供封禁原因，后续经过调查，极有可能是因为封禁前一周在聊天群转发了[MCBBS.RUN论坛反动事件截图](https://lezi.globalvillage.xn--xhq521b/article/%E5%9C%9F%E7%9A%87%E5%B8%9D%E5%96%B5#%E8%87%AA%E5%BB%BA%E8%AE%BA%E5%9D%9B%E5%8F%8D%E5%8A%A8%E4%BA%8B%E4%BB%B6)，中共恩将仇报
 
@@ -131,7 +132,7 @@
 
 </details>
 
-## 2024~2025：哔哩哔哩多次封禁最终永久封禁（反共指数+20%）（长期）
+## 2024~2025：哔哩哔哩多次封禁最终永久封禁（反共指数+10%）（被削弱）
 
 哔哩哔哩的“事迹”参考：[哔哩哔哩“七宗罪” | 乐子档案 - 地球村Minecraft服务器](https://lezi.globalvillage.xn--xhq521b/article/bilibili)
 
@@ -166,7 +167,7 @@
 
 </details>
   
-## 2025年11月起：指示阿里云冻结3年域名（反共指数+15%）（长期）
+## 2025年11月起：指示阿里云冻结3年域名（反共指数+10%）（被削弱）
 
 <details>
   
@@ -193,7 +194,7 @@
 
 </details>
 
-## 事后政府平台置之不理（反共指数+50%）（长期）
+## 事后政府平台置之不理（反共指数+25%）（被削弱）
 
 我先后在各种国家政府机构提交诉求，从315平台到各地法院，却一次次的置之不理，此刻开始道心破碎
 
@@ -206,7 +207,7 @@
 
 </details>
   
-## 向教育局举报初中时代纵容不良学生的教师却不做处理（反共指数+25）
+## 向教育局举报初中时代纵容不良学生的教师却不做处理（反共指数+16%）
 
 <details>
 
@@ -214,11 +215,11 @@
 
 </details>
 
-## AI频繁因戳中共逆鳞而中断（反共指数+0.5%）
+<!-- ## AI频繁因戳中共逆鳞而中断（反共指数+0.5%）
 
 甚至只是问个[编程问题](https://github.com/deepseek-ai/DeepSeek-R1/issues/796)
 
-~~所以CPC是中国AI发展的最大绊脚石~~
+~~所以CPC是中国AI发展的最大绊脚石~~ -->
 
 
 
@@ -361,3 +362,40 @@ International Condemnation (China Russia) / 國際譴責（中俄）
 Hands Off Venezuela Protests / 「別碰委內瑞拉」抗議
 Caracas Pro-Maduro Protests / 卡拉卡斯親馬杜羅示威
 Cuban Security Personnel Killed / 古巴安全人員死亡
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+哈哈哈
+
+
+
+小支那蛙1450小反贼
+小叛徒|特务|大军阀|反党分子野心家|走资派|投降派|修正主义大恶霸|黑线人物|不革命|黑秀才黑手黑帮凶|经验主义|民主派|中庸之道|变色龙|绊脚石|墙头草|老好人|小修苗|造谣公司传话筒|逆流邪风小爬虫
+被骗了吧，欢迎参观本王的源代码仓库，台湾不仅必将统一，台湾将成为广东的县级行政区，请不要做台独分子，中国是中华人民共和国，万岁！
+
+
+```
