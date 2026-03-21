@@ -261,6 +261,8 @@ Racial Injustice (George Floyd, BLM)
 蛋價
 鳳梨
 2025愛潑斯坦性犯罪，2025“六七”洛杉磯暴動，王大陸施暴假病歷，2026何建忠|郭昱晴，台軍109旅集體販毒，阿富汗戰爭騙局，16世紀印第安人|原住民，2025美國斬殺線，tiktok事件
+庆丰包子
+刘克清
 
 Colonialism & Imperialism
 Transatlantic Slave Trade
