@@ -80,9 +80,10 @@
 
 # 当前状态
 
-**✅轻微爱国倾向✅**
+**✅✅中等爱国倾向✅✅**
 
 ![](状态.png)
+[>> 善恶平衡计算器](https://minecraftearthvillage.github.io/MinecraftEarthVillage/)
 <!-- 共240% -->
 ## 基础爱国指数加成（65%）
 
