@@ -254,100 +254,29 @@
             margin-top: 20px;
         }
 
-        .天平容器 {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            margin: 40px auto;
-            padding-top: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
+        .指数显示 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .天平立柱 {
-            position: relative;
-            width: 60px;
-            height: 200px;
-            background-color: #8B4513;
-            border-radius: 10px 10px 0 0;
-            transform: perspective(1000px) rotateX(0deg);
-            transform-origin: bottom center;
+        .指数项 {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
         }
 
-        .天平立柱::before {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 20px;
-            background-color: #8B4513;
-            border-radius: 5px;
+        .指数标签 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
-
-        .天平立柱::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 10px;
-            height: 20px;
-            background-color: #8B4513;
-            border-radius: 5px 5px 0 0;
-        }
-
-        .天平横梁 {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 400px;
-            height: 10px;
-            background-color: #8B4513;
-            border-radius: 5px;
-            transition: transform 1s ease-in-out;
-            transform-origin: center center;
-        }
-
-        .天平托盘 {
-            position: absolute;
-            top: -20px;
-            width: 80px;
-            height: 24px;
-            background-color: #D2B48C;
-            border-radius: 10px;
-            transition: transform 1s ease-in-out;
-        }
-
-        .天平托盘.left {
-            left: -40px;
-        }
-
-        .天平托盘.right {
-            right: -40px;
-        }
-
-        .天平球 {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 50%;
-            transition: all 1s ease-in-out;
-        }
-
 
         .指数值 {
-            font-size: 24px;
+            font-size: 36px;
             font-weight: 700;
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
         }
 
         .左翼指数 {
@@ -356,6 +285,28 @@
 
         .右翼指数 {
             color: #0066cc;
+        }
+
+        .进度条容器 {
+            margin-top: 15px;
+            height: 12px;
+            background-color: #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .进度条 {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.8s ease-in-out;
+        }
+
+        .左翼进度 {
+            background-color: #de2910;
+        }
+
+        .右翼进度 {
+            background-color: #0066cc;
         }
 
         .倾向度 {
@@ -465,10 +416,10 @@
                     </div>
 
                     <div class="输入组">
-                        <label for="影响强度">影响强度（${影响强度最小值}-${影响强度最大值}）</label>
-                        <input type="number" id="影响强度" class="输入控件" min="${影响强度最小值}" max="${影响强度最大值}" step="1" value="10">
-                        <div class="提示信息">输入${影响强度最小值}-${影响强度最大值}的整数，数值越大，对指数影响越大</div>
-                        <div id="影响强度错误" class="错误提示">请输入${影响强度最小值}-${影响强度最大值}之间的整数</div>
+                        <label for="影响强度">影响强度 (0-100)</label>
+                        <input type="number" id="影响强度" class="输入控件" min="0" max="100" step="1" value="10">
+                        <div class="提示信息">输入0-100的整数，数值越大，对指数影响越大</div>
+                        <div id="影响强度错误" class="错误提示">请输入0-100之间的整数</div>
                     </div>
                 </div>
 
@@ -499,6 +450,7 @@
                 </div>
 
                 <div class="按钮组 居中">
+                    <button id="计算指数" class="按钮 红色" disabled>计算幸福度指数</button>
                     <button id="清空事件" class="按钮" disabled>清空所有事件</button>
                 </div>
 
@@ -509,32 +461,36 @@
 
             <div class="面板 结果面板" id="结果面板" style="display: none;">
                 <h2 class="面板标题">计算结果</h2>
-                <div class="天平容器">
-                    <div class="天平立柱">
-                        <div class="天平横梁" id="天平横梁">
-                            <div class="天平托盘 left">
-                                <div class="天平球 left" id="左翼球">
-                                    <img src="左.png" alt="左翼" style="width: 100%; height: 100%; object-fit: contain;">
-                                </div>
-                                <div class="指数值 左翼指数" id="左翼指数值">50.0%</div>
-                            </div>
-                            <div class="天平托盘 right">
-                                <div class="天平球 right" id="右翼球">
-                                    <img src="右.png" alt="右翼" style="width: 100%; height: 100%; object-fit: contain;">
-                                </div>
-                                <div class="指数值 右翼指数" id="右翼指数值">50.0%</div>
-                            </div>
+                <div class="指数显示">
+                    <div class="指数项">
+                        <div class="指数标签">
+                            左翼指数<br>
+                            <img src="左.png" alt="" srcset="">
+
+                        </div>
+                        <div class="指数值 左翼指数" id="左翼指数值">100.0%</div>
+                        <div class="进度条容器">
+                            <div class="进度条 左翼进度" id="左翼进度条" style="width: 100%"></div>
+                        </div>
+                        <div class="事件影响指示">
+                            <span>初始值: 50%</span>
+                            <span class="事件影响值 正面" id="左翼变化值">+0.0%</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="事件影响指示">
-                    <span>
-                        左翼变化: <span class="事件影响值 正面" id="左翼变化值">+0.0%</span>
-                    </span>
-                    <span>
-                        右翼变化: <span class="事件影响值 负面" id="右翼变化值">+0.0%</span>
-                    </span>
+
+                    <div class="指数项">
+                        <div class="指数标签">
+                            右翼指数<br><img src="右.png" alt="" srcset="">
+                        </div>
+                        <div class="指数值 右翼指数" id="右翼指数值">0.0%</div>
+                        <div class="进度条容器">
+                            <div class="进度条 右翼进度" id="右翼进度条" style="width: 0%"></div>
+                        </div>
+                        <div class="事件影响指示">
+                            <span>初始值: 50%</span>
+                            <span class="事件影响值 负面" id="右翼变化值">+0.0%</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="倾向度" id="倾向度显示">
@@ -552,8 +508,6 @@
     </div>
 
     <script>
-        let 影响强度最小值 = 0;
-        let 影响强度最大值 = 200;
         // 定义幸福度计算类
         class 幸福度计算器 {
             constructor() {
@@ -584,21 +538,20 @@
                     // （算法任选其一）
 
                     // 正面事件：左翼指数增加，右翼指数减少
-
                     //非线性增长模型
                     this.左翼指数 += 事件影响 * (1 - this.左翼指数) * 0.5;
                     this.右翼指数 -= 事件影响 * this.右翼指数 * 0.5;
-                    //线性增长模型
-                    // this.左翼指数 += 事件影响;
-                    // this.右翼指数 -= 事件影响;
-
+                    /*//线性增长模型
+                    this.左翼指数 += 事件影响;
+                    this.右翼指数 -= 事件影响;
+                    */
                 } else if (事件类型 === '负面') {
                     // 负面事件：左翼指数减少，右翼指数增加
 
-                    //线性增长模型
-                    // this.左翼指数 -= 事件影响;
-                    // this.右翼指数 += 事件影响;
-                    
+                    /*//线性增长模型
+                    this.左翼指数 -= 事件影响;
+                    this.右翼指数 += 事件影响;
+                    */
 
                     //非线性增长模型
                     this.左翼指数 -= 事件影响 * this.左翼指数 * 0.5;
@@ -699,22 +652,19 @@
         const 添加事件按钮 = document.getElementById('添加事件');
         const 重置表单按钮 = document.getElementById('重置表单');
         const 加载示例数据按钮 = document.getElementById('加载示例数据');
-
+        const 计算指数按钮 = document.getElementById('计算指数');
         const 清空事件按钮 = document.getElementById('清空事件');
         const 事件列表容器 = document.getElementById('事件列表');
         const 无事件提示 = document.getElementById('无事件提示');
         const 结果面板 = document.getElementById('结果面板');
         const 左翼指数值显示 = document.getElementById('左翼指数值');
         const 右翼指数值显示 = document.getElementById('右翼指数值');
+        const 左翼进度条 = document.getElementById('左翼进度条');
+        const 右翼进度条 = document.getElementById('右翼进度条');
         const 左翼变化值显示 = document.getElementById('左翼变化值');
         const 右翼变化值显示 = document.getElementById('右翼变化值');
         const 倾向度值显示 = document.getElementById('倾向度值');
         const 倾向度显示 = document.getElementById('倾向度显示');
-        const 天平横梁 = document.getElementById('天平横梁');
-        const 左翼球 = document.getElementById('左翼球');
-        const 右翼球 = document.getElementById('右翼球');
-        const 天平托盘左 = document.querySelector('.天平托盘.left');
-        const 天平托盘右 = document.querySelector('.天平托盘.right');
 
         // 当前编辑的事件索引（用于编辑功能）
         let 当前编辑索引 = -1;
@@ -722,7 +672,7 @@
         // 验证影响强度输入
         影响强度输入.addEventListener('input', function () {
             const 值 = parseInt(this.value);
-            if (值 < 影响强度最小值 || 值 > 影响强度最大值 || isNaN(值)) {
+            if (值 < 0 || 值 > 100 || isNaN(值)) {
                 影响强度错误提示.style.display = 'block';
                 添加事件按钮.disabled = true;
             } else {
@@ -744,8 +694,8 @@
                 return;
             }
 
-            if (isNaN(影响强度输入值) || 影响强度输入值 < 影响强度最小值 || 影响强度输入值 > 影响强度最大值) {
-                alert(`影响强度必须在${影响强度最小值}到${影响强度最大值}之间`);
+            if (isNaN(影响强度输入值) || 影响强度输入值 < 0 || 影响强度输入值 > 100) {
+                alert('影响强度必须在0到100之间');
                 return;
             }
 
@@ -765,8 +715,15 @@
             // 更新事件列表显示
             更新事件列表();
 
+            // 启用计算和清空按钮
+            计算指数按钮.disabled = false;
+            清空事件按钮.disabled = false;
+
             // 重置表单
             重置表单();
+
+            // 隐藏结果面板
+            结果面板.style.display = 'none';
         });
 
         // 重置表单
@@ -793,13 +750,10 @@
             if (事件记录.length === 0) {
                 事件列表容器.innerHTML = '';
                 无事件提示.style.display = 'block';
-                清空事件按钮.disabled = true;
-                结果面板.style.display = 'none';
                 return;
             }
 
             无事件提示.style.display = 'none';
-            清空事件按钮.disabled = false;
 
             let 表格HTML = '';
             事件记录.forEach((事件, 索引) => {
@@ -854,17 +808,21 @@
                     if (confirm('确定要删除此事件吗？')) {
                         我的计算器.删除事件(索引);
                         更新事件列表();
+
+                        if (我的计算器.事件记录.length === 0) {
+                            计算指数按钮.disabled = true;
+                            清空事件按钮.disabled = true;
+                            结果面板.style.display = 'none';
+                        }
                     }
                 });
             });
-
-            // 自动计算指数
-            自动计算指数();
         }
 
-        // 自动计算指数函数
-        function 自动计算指数() {
+        // 计算指数
+        计算指数按钮.addEventListener('click', function () {
             const 结果 = 我的计算器.计算指数();
+            倾向等级 = ""
 
             // 显示结果面板
             结果面板.style.display = 'block';
@@ -873,26 +831,8 @@
             左翼指数值显示.textContent = 结果.左翼指数.toFixed(1) + '%';
             右翼指数值显示.textContent = 结果.右翼指数.toFixed(1) + '%';
 
-            // 计算天平倾斜角度（最大倾斜30度）
-            const 倾斜角度 = (结果.倾向度 / 100) * 30;
-            天平横梁.style.transform = `translateX(-50%) rotate(${倾斜角度}deg)`;
-
-            // 计算球的大小（最小20px，最大200px）
-            const 左翼球大小 = 20 + (结果.左翼指数 / 100) * 180;
-            const 右翼球大小 = 20 + (结果.右翼指数 / 100) * 180;
-
-            // 设置球的大小和位置
-            左翼球.style.width = 左翼球大小 + 'px';
-            左翼球.style.height = 左翼球大小 + 'px';
-            左翼球.style.bottom = '24px'; // 确保球的底边不低于托盘的顶边
-
-            右翼球.style.width = 右翼球大小 + 'px';
-            右翼球.style.height = 右翼球大小 + 'px';
-            右翼球.style.bottom = '24px'; // 确保球的底边不低于托盘的顶边
-
-            // 保持托盘水平
-            天平托盘左.style.transform = `rotate(${-倾斜角度}deg)`;
-            天平托盘右.style.transform = `rotate(${-倾斜角度}deg)`;
+            左翼进度条.style.width = 结果.左翼指数 + '%';
+            右翼进度条.style.width = 结果.右翼指数 + '%';
 
             // 更新变化值
             const 左翼变化 = 结果.左翼变化;
@@ -933,9 +873,7 @@
 
             // 滚动到结果
             结果面板.scrollIntoView({ behavior: 'smooth' });
-        }
-
-
+        });
 
         // 清空所有事件
         清空事件按钮.addEventListener('click', function () {
@@ -944,35 +882,15 @@
             if (confirm('确定要清空所有事件吗？此操作不可撤销。')) {
                 我的计算器.清空事件();
                 更新事件列表();
+                计算指数按钮.disabled = true;
+                清空事件按钮.disabled = true;
+                结果面板.style.display = 'none';
             }
         });
 
         // 初始化
         重置表单();
         更新事件列表();
-        
-        // 更新影响强度相关的HTML内容
-        function 更新影响强度显示() {
-            // 更新标签
-            const 影响强度标签 = document.querySelector('label[for="影响强度"]');
-            影响强度标签.textContent = `影响强度（${影响强度最小值}-${影响强度最大值}）`;
-            
-            // 更新输入框的min和max属性
-            const 影响强度输入 = document.getElementById('影响强度');
-            影响强度输入.min = 影响强度最小值;
-            影响强度输入.max = 影响强度最大值;
-            
-            // 更新提示信息
-            const 提示信息 = 影响强度输入.nextElementSibling;
-            提示信息.textContent = `输入${影响强度最小值}-${影响强度最大值}的整数，数值越大，对指数影响越大`;
-            
-            // 更新错误提示
-            const 错误提示 = 提示信息.nextElementSibling;
-            错误提示.textContent = `请输入${影响强度最小值}-${影响强度最大值}之间的整数`;
-        }
-        
-        // 调用更新函数
-        更新影响强度显示();
 
         // 添加示例数据
         function 添加示例数据() {
@@ -991,6 +909,8 @@
             });
 
             更新事件列表();
+            计算指数按钮.disabled = false;
+            清空事件按钮.disabled = false;
         }
 
         // 页面加载后自动添加示例数据（方便演示）
