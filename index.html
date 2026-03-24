@@ -874,7 +874,7 @@
             右翼指数值显示.textContent = 结果.右翼指数.toFixed(1) + '%';
 
             // 计算天平倾斜角度（最大倾斜30度）
-            const 倾斜角度 = (结果.倾向度 / 100) * 30;
+            const 倾斜角度 = (结果.倾向度 / 100) * -30;
             天平横梁.style.transform = `translateX(-50%) rotate(${倾斜角度}deg)`;
 
             // 计算球的大小（最小20px，最大200px）
